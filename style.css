@@ -1,0 +1,375 @@
+/* ==========================================================
+   Fei Xue — Portfolio  (Assignment 3)
+   Layout built with CSS Grid. 
+   ========================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+  background: #f7f8fb;
+}
+
+.wrap {
+  max-width: 1232px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #1f9d8a;
+  outline-offset: 2px;
+}
+
+h2 {
+  font-size: 26px;
+  color: #10233c;
+  margin-bottom: 18px;
+  border-bottom: 3px solid #1f9d8a;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+h3 { font-size: 16px; color: #10233c; margin-bottom: 4px; }
+
+p { font-size: 14px; line-height: 1.6; color: #4b5563; margin-bottom: 8px; }
+
+p.lorem { color: #6b7280; font-style: italic; }
+
+ul { list-style: none; }
+
+/* ---------------- Header / Nav (Grid) ---------------- */
+
+header { background: #10233c; }
+
+header .wrap {
+  max-width: 1200px;
+  padding: 0 24px;
+  min-height: 90px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo nav btn";
+  align-items: center;
+}
+
+.logo {
+  grid-area: logo;
+  color: #ffffff;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+nav {
+  grid-area: nav;
+  margin-left: 60px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 26px;
+}
+
+nav a {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+nav a:hover { color: #1f9d8a; }
+
+.header-btn { grid-area: btn; }
+
+.menu-toggle {
+  grid-area: toggle;
+  display: none;
+}
+
+/* ---------------- Buttons ---------------- */
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid #10233c;
+  color: #10233c;
+  background: transparent;
+}
+
+.btn-solid {
+  background: #1f9d8a;
+  border-color: #1f9d8a;
+  color: #ffffff;
+}
+
+.btn:hover { opacity: 0.85; }
+
+.btn-row { margin-top: 18px; }
+.btn-row .btn { margin: 0 10px 10px 0; }
+
+/* ---------------- Sections (generic) ---------------- */
+
+.section { padding: 60px 0; }
+.alt-bg { background: #eef1f7; }
+
+/* ---------------- Two-column rows (Grid) ---------------- */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-top: 4px solid #1f9d8a;
+  min-height: 220px;
+}
+
+.about-box, .skills-box {
+  background: #ffffff;
+  padding: 30px;
+  border-top: 4px solid #1f9d8a;
+  min-height: 260px;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  margin-bottom: 4px;
+}
+
+.profile-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #dbe4f0;
+  object-fit: cover;
+}
+
+.entry { margin-bottom: 22px; }
+.entry:last-child { margin-bottom: 0; }
+.entry .date {
+  display: block;
+  font-size: 12px;
+  color: #17806f;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* ---------------- Skills ---------------- */
+
+.skill { margin-bottom: 16px; }
+
+.skill-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border: none;
+  background: #e5e7eb;
+}
+
+.skill-bar::-webkit-progress-bar { background: #e5e7eb; }
+.skill-bar::-webkit-progress-value { background: #1f9d8a; }
+.skill-bar::-moz-progress-bar { background: #1f9d8a; }
+
+/* ---------------- Projects (Grid) ---------------- */
+
+.project-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.project-thumb {
+  height: 140px;
+  background: #dbe4f0;
+  color: #6b7280;
+  font-size: 14px;
+  text-align: center;
+  line-height: 140px;
+  margin-bottom: 14px;
+}
+
+/* ---------------- Certifications (Grid) ---------------- */
+
+.badge-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.badge-icon {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #1f9d8a;
+  font-size: 26px;
+  margin: 0 auto 10px;
+}
+
+.badge span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ---------------- Blogs ---------------- */
+
+.blog-entry {
+  background: #ffffff;
+  padding: 30px;
+  border-left: 4px solid #1f9d8a;
+}
+
+/* ---------------- Pets (Grid) ---------------- */
+
+.pet-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.pet-item {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+}
+
+.pet-photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  background: #dbe4f0;
+  object-fit: cover;
+}
+
+.pet-item figcaption { font-size: 14px; line-height: 1.6; color: #4b5563; }
+
+/* ---------------- Footer / Contact ---------------- */
+
+footer {
+  background: #10233c;
+  color: #cbd5e1;
+  padding: 50px 0 30px;
+  text-align: center;
+}
+
+footer h2 { color: #ffffff; }
+
+footer p { color: #94a3b8; max-width: 600px; margin: 0 auto 18px; }
+
+.social-row {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.social-row a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #475569;
+  border-radius: 50%;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.social-row a:hover {
+  background: #1f9d8a;
+  border-color: #1f9d8a;
+  color: #ffffff;
+}
+
+.copyright { font-size: 12px; color: #94a3b8; }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+/* ---- Tablet and below: stacked columns + collapsible menu ---- */
+@media (max-width: 900px) {
+  header .wrap {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 90px auto;
+    grid-template-areas:
+      "logo toggle"
+      "nav  nav";
+  }
+
+  .header-btn { display: none; }
+
+  .menu-toggle {
+    display: block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #1f9d8a;
+    cursor: pointer;
+  }
+
+  nav { margin-left: 0; }
+  nav ul { display: none; padding-bottom: 12px; }
+  nav.open ul { display: block; }
+  nav li { display: block; margin: 0; }
+  nav a { display: block; padding: 12px 0; border-top: 1px solid #1e3a5f; }
+
+  .two-col { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ---- Small tablet: one project / badge per row ---- */
+@media (max-width: 700px) {
+  .project-row, .badge-row { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ---- Phone (< 500px) ---- */
+@media (max-width: 499px) {
+  .section { padding: 40px 0; }
+
+  h2 { font-size: 22px; }
+
+  .card, .about-box, .skills-box, .blog-entry { padding: 20px; }
+
+  .about-inner { grid-template-columns: 1fr; }
+
+  .pet-row { grid-template-columns: 1fr; gap: 20px; }
+
+  .btn-row .btn { display: block; text-align: center; margin-right: 0; }
+}
